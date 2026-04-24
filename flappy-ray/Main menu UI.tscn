@@ -27,6 +27,7 @@ offset_top = 262.0
 offset_right = 656.0
 offset_bottom = 325.0
 theme_override_fonts/font = ExtResource("2_gtvbg")
+theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_5jf7k")
 text = "START"
 

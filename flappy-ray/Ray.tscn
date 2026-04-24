@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3eb2rgrthkmm"]
+
+[ext_resource type="Script" uid="uid://8k453xelajeq" path="res://Glide mechanics.gd" id="1_47rfl"]
+[ext_resource type="Texture2D" uid="uid://ck5ef6v6ffagg" path="res://Ray.png" id="1_q4ss5"]
+
+[node name="Ray character" type="CharacterBody2D"]
+script = ExtResource("1_47rfl")
+
+[node name="Ray" type="Sprite2D" parent="."]
+position = Vector2(195.5, 385.75)
+scale = Vector2(0.42, 0.4)
+texture = ExtResource("1_q4ss5")
+
+[node name="hitbox" type="CollisionPolygon2D" parent="."]
+position = Vector2(188.479, 420.117)
+scale = Vector2(1.28038, 1.35417)
+polygon = PackedVector2Array(10.5601, 2.8674, 12.9032, -3.77869, 14.4652, -12.6402, 23.0564, -17.8094, 44.925, -32.5787, 39.4578, -35.5325, 33.9907, -37.0094, 30.8666, -44.394, 26.9615, -48.0863, 12.1222, -53.2555, 5.87404, -53.2555, -1.93614, -44.394, -3.49818, -31.8402, -17.5565, -34.0555, -21.4617, -30.3633, -17.5565, -21.5017, -28.4908, -17.8094, -33.177, -13.671, -23.0236, -7.47101, -17.177, 3.32898, -12.8704, 2.12897, -1.93614, -11.1633, 3.53098, 2.86743)

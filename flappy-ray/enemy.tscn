@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://3mkm0ujj7m2i"]
+
+[ext_resource type="Texture2D" uid="uid://dtygbtwflfb7e" path="res://badnik.png" id="2_v140b"]
+
+[node name="Enemy" type="StaticBody2D"]
+
+[node name="Badnik" type="Sprite2D" parent="."]
+position = Vector2(520, 198)
+scale = Vector2(0.62, 0.5)
+texture = ExtResource("2_v140b")
+
+[node name="hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(492, 229, 495, 231, 502, 234, 530, 226, 535, 218, 534, 213, 565, 213, 565, 200, 548, 201, 540, 197, 538, 189, 535, 182, 500, 180, 496, 174, 475, 178, 474, 185, 481, 188, 482, 208, 502, 213)

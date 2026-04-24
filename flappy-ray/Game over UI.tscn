@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci4q7wegq7gq2"]
+
+[ext_resource type="Script" uid="uid://dsu1if38oj70" path="res://Game over.gd" id="1_5jf7k"]
+[ext_resource type="FontFile" uid="uid://4k1b4ym8123x" path="res://PixeloidSans-Bold.ttf" id="1_sdbmt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jf7k"]
+bg_color = Color(0.839216, 0.713726, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="Game over UI" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+script = ExtResource("1_5jf7k")
+
+[node name="text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1152.0
+offset_bottom = 515.0
+theme_override_fonts/font = ExtResource("1_sdbmt")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restartbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 445.0
+offset_right = 653.0
+offset_bottom = 508.0
+theme_override_fonts/font = ExtResource("1_sdbmt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5jf7k")
+text = "RESTART"

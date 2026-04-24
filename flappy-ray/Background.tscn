@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://oggayr8qph8g"]
+
+[ext_resource type="Texture2D" uid="uid://bpd75y8fff15q" path="res://ocean.jpg" id="1_i7s6n"]
+[ext_resource type="Script" uid="uid://5wkbevstgcuq" path="res://Background scrolling.gd" id="1_xehqc"]
+[ext_resource type="Texture2D" uid="uid://clbq8ayimjxpv" path="res://trees.png" id="2_xehqc"]
+[ext_resource type="Texture2D" uid="uid://yobnbfm4e2uj" path="res://spikes.png" id="4_splo0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_splo0"]
+size = Vector2(299.609, 26.9057)
+
+[node name="background" type="Node2D"]
+script = ExtResource("1_xehqc")
+
+[node name="ocean1" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(576, 253)
+scale = Vector2(6.93976, 6.46154)
+texture = ExtResource("1_i7s6n")
+
+[node name="ocean2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(1726.5, 253)
+scale = Vector2(6.94, 6.462)
+texture = ExtResource("1_i7s6n")
+
+[node name="ocean3" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2877, 253)
+scale = Vector2(6.93975, 6.46154)
+texture = ExtResource("1_i7s6n")
+
+[node name="trees1" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(576, 322)
+scale = Vector2(3.03158, 3.17073)
+texture = ExtResource("2_xehqc")
+
+[node name="trees2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(1726, 323)
+scale = Vector2(3.032, 3.171)
+texture = ExtResource("2_xehqc")
+
+[node name="trees3" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2876.5, 323)
+scale = Vector2(3.032, 3.171)
+texture = ExtResource("2_xehqc")
+
+[node name="lower spikes" type="StaticBody2D" parent="."]
+
+[node name="spikes" type="Sprite2D" parent="lower spikes"]
+position = Vector2(576, 620)
+scale = Vector2(3.835, 1.65625)
+texture = ExtResource("4_splo0")
+
+[node name="hitbox" type="CollisionShape2D" parent="lower spikes"]
+position = Vector2(576.5, 623.281)
+scale = Vector2(3.835, 1.65625)
+shape = SubResource("RectangleShape2D_splo0")
+
+[node name="upper spikes" type="StaticBody2D" parent="."]
+
+[node name="spikes" type="Sprite2D" parent="upper spikes"]
+position = Vector2(574, 26)
+scale = Vector2(3.835, 1.65625)
+texture = ExtResource("4_splo0")
+flip_v = true
+
+[node name="hitbox" type="CollisionShape2D" parent="upper spikes"]
+position = Vector2(575, 24)
+scale = Vector2(3.835, 1.65625)
+shape = SubResource("RectangleShape2D_splo0")

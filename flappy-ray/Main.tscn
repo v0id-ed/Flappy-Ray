@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsxfjjlp61vgj"]
+
+[ext_resource type="PackedScene" uid="uid://d3eb2rgrthkmm" path="res://Ray.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://oggayr8qph8g" path="res://Background.tscn" id="1_uu6xs"]
+[ext_resource type="Script" uid="uid://6pr7ehah3dfr" path="res://Enemy spawning.gd" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://3mkm0ujj7m2i" path="res://enemy.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://dfeon8i6bm05q" path="res://Main menu UI.tscn" id="5_fos0i"]
+[ext_resource type="Script" uid="uid://bn451kteiiuoy" path="res://Point incrementer.gd" id="6_trn2v"]
+[ext_resource type="FontFile" uid="uid://4k1b4ym8123x" path="res://PixeloidSans-Bold.ttf" id="7_trn2v"]
+[ext_resource type="Script" uid="uid://dipjf7xclcysc" path="res://High score mechanics.gd" id="8_trn2v"]
+
+[node name="Main" type="Node2D"]
+
+[node name="background" parent="." instance=ExtResource("1_uu6xs")]
+position = Vector2(0, 2)
+
+[node name="Ray" parent="." instance=ExtResource("1_glv2v")]
+position = Vector2(-46, -73)
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("3_r0du0")
+enemy_scene = ExtResource("4_cm0pq")
+background_node = NodePath("../background")
+player_node = NodePath("../Ray")
+
+[node name="Enemy" parent="." instance=ExtResource("4_cm0pq")]
+position = Vector2(936, 113)
+collision_layer = 2
+
+[node name="Main menu" parent="." instance=ExtResource("5_fos0i")]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1155.0
+offset_bottom = 649.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Main menu" groups=["ui_canvas"]]
+script = ExtResource("6_trn2v")
+
+[node name="Points" type="Label" parent="Main menu/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 60.0
+offset_right = -13.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.807843, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(1, 0.913725, 0.882353, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_trn2v")
+theme_override_font_sizes/font_size = 45
+text = "0"
+
+[node name="High scores" type="Label" parent="Main menu/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -255.0
+offset_right = 133.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.901961, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(1, 0.913725, 0.882353, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_trn2v")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+script = ExtResource("8_trn2v")
